@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import styles from './registerForm.module.scss';
 import PasswordChecklist from "react-password-checklist"
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 interface IFormInput {
     email: string;
@@ -12,6 +13,7 @@ interface IFormInput {
 }
 
 const RegisterForm = () => {
+  const navigate = useNavigate();
     const {
         register,
         handleSubmit,
@@ -41,6 +43,7 @@ const RegisterForm = () => {
           return;
         }
         reset();
+        navigate('/emailSend')
       }; // your form submit function which will invoke after successful validation
     
     //   console.log(watch("example")); // you can watch individual input by pass the name of the input
