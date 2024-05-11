@@ -1,0 +1,52 @@
+.container{
+    display: flex;
+    font-family: "M PLUS 1p", sans-serif;
+    margin: 1rem 2rem;
+    color: #212121;
+}
+.logo{
+    width: 23rem;
+    height: 28rem;
+   margin: 0 4rem;
+}
+.container__titleFirst{
+    font-weight: 500;
+    font-style: normal;
+    font-size: 48px;
+    margin: 0;    
+  }
+  .container__titleSecond{
+    font-weight: 400;
+    font-style: normal;
+    font-size: 24px;
+    margin: 0;
+  }
+  .container__right{
+    margin: auto;
+    text-align: center;
+    width: 25rem;
+  }
+ .container__message1{
+    font-weight: 500;
+    font-style: normal;
+    font-size: 20px;
+ }
+ .container__message2{
+    font-weight: 500;
+    font-style: normal;
+    font-size: 15px;
+    margin: 0 2rem;
+    color: #767676;
+     span{
+        color: black;
+        font-weight: 600;
+     }
+ }
+ button{
+    color: #292929;
+    font-size: 16px;
+    background-color: white;
+    border: none;
+    margin-top: 3rem;
+ }
+
