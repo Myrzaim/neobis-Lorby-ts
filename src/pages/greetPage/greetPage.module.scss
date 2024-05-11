@@ -1,0 +1,32 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    margin-top: 5rem;
+    align-items: center;
+}
+.container__greet{
+    font-size: 36px;
+    font-weight: 500;
+    margin: 0;
+    margin-bottom: 0.5rem;
+}
+.logo{
+    width: 15rem;
+    height: 20rem;
+   margin: 1rem 4rem;
+}
+.container__title{
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    margin: 0;    
+  }
+  button{
+    border: none;
+    border-radius: 0.5rem;
+    margin: 1rem;
+    padding: 0.5rem;
+    font-size: 16px;
+    font-weight: 500;
+  
+ }
