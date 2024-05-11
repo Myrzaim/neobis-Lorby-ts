@@ -15,7 +15,8 @@ function App() {
       {/* <AuthPage /> */}
       <Route path="/register" element={<RegisterPage />} />
         {/* <RegisterPage /> */}
-          <Route path="/emailSend" element={<EmailSendPage />} />
+        {/* <Route path="/emailSend" element={<EmailSendPage />} /> */}
+        <Route path="/greet" element={<GreetPage title={"Добро пожаловать"}/>} />
         </Routes>
     </div>
   );

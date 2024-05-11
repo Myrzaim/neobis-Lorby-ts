@@ -16,7 +16,6 @@ const RegisterPage :React.FC  = () => {
       <p className={styles.container__titleSecond}>Твой личный репетитор</p>
           </div>
     <div className={styles.container__right}>
-            <p className={styles.container__greet}>Создать аккаунт Lorby</p>
 <RegisterForm/>
     </div>
         </div>

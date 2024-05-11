@@ -3,7 +3,8 @@ import { useForm } from "react-hook-form";
 import styles from './registerForm.module.scss';
 import PasswordChecklist from "react-password-checklist"
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import EmailSendPage from '../pages/emailSendPage/emailSendPage';
 
 interface IFormInput {
     email: string;
@@ -13,6 +14,8 @@ interface IFormInput {
 }
 
 const RegisterForm = () => {
+  const [showRegisterForm, setShowRegisterForm] = useState(true);
+  const [userEmail, setUserEmail] = useState("");
   const navigate = useNavigate();
     const {
         register,
@@ -28,6 +31,7 @@ const RegisterForm = () => {
         let email = data.email;
         let username = data.login;
         let password = data.password;
+        setUserEmail(data.email)
         let newObj = { email, username, password };
         console.log(JSON.stringify(newObj));
         try {
@@ -35,24 +39,26 @@ const RegisterForm = () => {
             "https://neobis-auth-project-e28eca5cdfcc.herokuapp.com/signUp",
             newObj
           );
-          // const { accesToken, refreshToken } = res;
-          
+          setShowRegisterForm(false);
+        
           console.log(res);
         } catch (error) {
           console.log(error);
           return;
         }
         reset();
-        navigate('/emailSend')
-      }; // your form submit function which will invoke after successful validation
+        
+      }; 
     
-    //   console.log(watch("example")); // you can watch individual input by pass the name of the input
+  
     
     const [password, setPassword] = useState("");
     
-    return (
+  return (
+      showRegisterForm?
       
-    <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
+      <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
+        <p className={styles.container__greet}>Создать аккаунт Lorby</p>
     <input placeholder='Введи адрес почты'
       {...register("email", {
           required: "Обязательное поле",
@@ -82,22 +88,28 @@ const RegisterForm = () => {
         <PasswordChecklist className={styles.form__error}
 				rules={["minLength","letter","number","specialChar"]}
 				minLength={5}
-				value={password}
+          value={password}
           onChange={(isValid) => { }}
           messages={{
             minLength: "От 8 до 15 символов",
             letter: "Строчные и прописные буквы",
             number: "Минимум 1 цифра",
-           specialChar: 'Минимум 1 спецсимвол (!, ", #, $...)'
+            specialChar: 'Минимум 1 спецсимвол (!, ", #, $...)'
           }}
 			/>
           
         
           <input   placeholder='Повтори пароль'{...register("confirmPassword", {
-              required: true
+              required: true, validate: (val: string) => {
+                if (watch('password') != val) {
+                  return "Пароли не совпадают!";
+                }
+              }
           })} />
+        <div className={styles.form__error}>
+          {errors?.confirmPassword && <p>{errors?.confirmPassword?.message || "Errors"}</p>}</div>
     <input type="submit"/>
-  </form>
+      </form> : <EmailSendPage email={userEmail} />
   )
 }
 
