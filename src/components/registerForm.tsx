@@ -22,7 +22,7 @@ const RegisterForm = () => {
         handleSubmit,
       watch,
         reset,
-        formState: { errors }
+        formState: { errors, }
   } = useForm<IFormInput>();
   
     
@@ -59,8 +59,9 @@ const RegisterForm = () => {
       
       <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
         <p className={styles.container__greet}>Создать аккаунт Lorby</p>
-    <input placeholder='Введи адрес почты'
-      {...register("email", {
+        <input placeholder='Введи адрес почты'
+        
+          {...register("email", {
           required: "Обязательное поле",
           pattern: /^[A-Z0-9+_.-]+@[A-Z0-9.-]+$/i
       })}

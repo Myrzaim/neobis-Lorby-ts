@@ -8,14 +8,10 @@ import RegisterPage from './pages/registerPage/registerPage';
 function App() {
   return (
     <div className="App">
-      {/* <GreetPage title={"Добро пожаловать"} /> */}
-     
+       
       <Routes>
       <Route path="/" element={<AuthPage />} />
-      {/* <AuthPage /> */}
-      <Route path="/register" element={<RegisterPage />} />
-        {/* <RegisterPage /> */}
-        {/* <Route path="/emailSend" element={<EmailSendPage />} /> */}
+      <Route path="/register" element={<RegisterPage />} />s
         <Route path="/greet" element={<GreetPage title={"Добро пожаловать"}/>} />
         </Routes>
     </div>

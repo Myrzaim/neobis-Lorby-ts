@@ -54,7 +54,7 @@ export const AuthForm = () => {
        {errors?.password?.type === "required" && <p>Заполни поле</p>}
     <button type="submit">Войти</button>
       </form>
-      <Link to={`/register`}> <p>У меня еще нет аккаунта</p></Link>
+      <Link to={`/register`}> <button className={styles.btn}>У меня еще нет аккаунта</button></Link>
     </>
   )
 }
