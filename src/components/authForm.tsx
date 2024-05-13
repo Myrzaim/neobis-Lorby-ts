@@ -23,7 +23,7 @@ export const AuthForm = () => {
         console.log(JSON.stringify(data));
         try {
           let res = await axios.post(
-            "https://neobis-auth-project-e28eca5cdfcc.herokuapp.com/logIn",
+            "http://207.154.255.31:8085/logIn",
             data
           );
           const accessToken = res.data.token;
@@ -54,7 +54,7 @@ export const AuthForm = () => {
        {errors?.password?.type === "required" && <p>Заполни поле</p>}
     <button type="submit">Войти</button>
       </form>
-      <Link to={`/register`}> <p>У меня еще нет аккаунта</p></Link>
+      <Link to={`/register`}> <button className={styles.btn}>У меня еще нет аккаунта</button></Link>
     </>
   )
 }

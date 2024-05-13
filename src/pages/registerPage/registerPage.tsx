@@ -7,8 +7,8 @@ import { Link } from 'react-router-dom';
 
 const RegisterPage :React.FC  = () => {
     return (<>
-            <Link to ={`/`}>    <img src={back} alt="backIcon" />
-            <span>назад</span></Link> 
+            <Link to ={`/`} className={styles.link}> <img src={back} alt="backIcon" />
+            назад</Link> 
     <div className={styles.container}>
     <div className={styles.container__left}>
       <img src={Logo} alt="logo" className={styles.logo} />

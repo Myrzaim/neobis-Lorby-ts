@@ -5,8 +5,8 @@ flex-direction: column;
     background-color: #F8F8F8;
     border: none;
     border-radius: 0.5rem;
-    margin: 1rem;
-    padding: 0.5rem;
+    margin: 0.5rem;
+    padding: 1rem;
     font-size: 16px;
     font-weight: 500;
  }
@@ -22,11 +22,11 @@ flex-direction: column;
  }
 }
 .form__error{
-   color: red;
+   color: gray;
    font-size: 12px;
    margin: 0;
    text-align: left;
-
+padding: 0;
   }
   .container__greet{
    font-weight: 500;

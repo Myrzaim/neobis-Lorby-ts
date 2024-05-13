@@ -22,7 +22,7 @@ const RegisterForm = () => {
         handleSubmit,
       watch,
         reset,
-        formState: { errors }
+        formState: { errors, }
   } = useForm<IFormInput>();
   
     
@@ -36,7 +36,7 @@ const RegisterForm = () => {
         console.log(JSON.stringify(newObj));
         try {
           let res = axios.post(
-            "https://neobis-auth-project-e28eca5cdfcc.herokuapp.com/signUp",
+            "http://207.154.255.31:8085/signUp",
             newObj
           );
           setShowRegisterForm(false);
@@ -59,8 +59,9 @@ const RegisterForm = () => {
       
       <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
         <p className={styles.container__greet}>Создать аккаунт Lorby</p>
-    <input placeholder='Введи адрес почты'
-      {...register("email", {
+        <input placeholder='Введи адрес почты'
+        
+          {...register("email", {
           required: "Обязательное поле",
           pattern: /^[A-Z0-9+_.-]+@[A-Z0-9.-]+$/i
       })}
