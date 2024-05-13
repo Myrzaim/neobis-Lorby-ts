@@ -23,7 +23,7 @@ export const AuthForm = () => {
         console.log(JSON.stringify(data));
         try {
           let res = await axios.post(
-            "https://neobis-auth-project-e28eca5cdfcc.herokuapp.com/logIn",
+            "http://207.154.255.31:8085/logIn",
             data
           );
           const accessToken = res.data.token;

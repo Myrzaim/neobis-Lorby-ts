@@ -36,7 +36,7 @@ const RegisterForm = () => {
         console.log(JSON.stringify(newObj));
         try {
           let res = axios.post(
-            "https://neobis-auth-project-e28eca5cdfcc.herokuapp.com/signUp",
+            "http://207.154.255.31:8085/signUp",
             newObj
           );
           setShowRegisterForm(false);

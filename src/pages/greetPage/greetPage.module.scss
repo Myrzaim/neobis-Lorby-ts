@@ -28,5 +28,16 @@
     padding: 0.5rem;
     font-size: 16px;
     font-weight: 500;
-  
+ }
+ .modalContainer{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    h2 , h3 , button{margin: 0.5rem;
+    }
+    .modal_btn{
+        background-color: black;
+        color: white;
+        padding: 1rem;
+    }
  }
